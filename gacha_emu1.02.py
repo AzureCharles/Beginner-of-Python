@@ -1,3 +1,4 @@
+import pandas as pd
 import random as rd
 import time
 
@@ -9,19 +10,52 @@ import time
      ③Support set-accessible probability
      ④Support built-in guarantee prize
 
-
-    @prizeDict:卡池字典，包含卡池主要信息：prize，weight，probability
+    关键字说明：
+    @
     @
 """
-#
+
+class PrizesDict:   #卡池基本模板
+    def __init__(self,ur_list,ssr_list,sr_list,r_list):
+        prdict={}
+        self.prdict['ur'] = ur_list
+        self.prdict['ssr'] = ssr_list
+        self.prdict['sr'] = sr_list
+        self.prdict['r'] = r_list
+    
+
+prizeTotalDict = PrizesDict()
+
+#尝试将这个字典直接封装为类型，可通过外部xls等文件导入
+
+def selectPrize(prize_dict):
+    pass
+    prizeList = []  #记录卡池对象的元组列表
+    printPrize(prizeList)
+    return prizeList
+
+def printPrize(prize_list):
+    prize_keys = prizeTotalDict.key()
+    for key in prize_keys:
+        print(prize_keys[key]+": "+prize_list[key])
+
+def getPoolContent(prizeList):
+    prizeRates = [0.02,0.23,0.35,0.4]
+    for index in prizeList:
+        poolContent[prizeList[index]] = prizeRates[index]
+    return poolContent
+
+    #卡池列表初始化，key-value:编号-数量比例
+    #为便于测试，
+
 
 
 gachaResultDict = {}
 
 
-class GachaPool():
-    def __init__(self,pool_cap=100,):
-        self.pool_capacity = pool_cap
+class GachaPool:
+    def __init__(self,poolContent,):
+        self.pool = poolContent
         self.
 
 
