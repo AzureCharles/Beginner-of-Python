@@ -4,10 +4,21 @@
 
 import pypinyin as ppy
 import random as rd
+import pandas as pd
 
 def name_random:
     f_name_restore = ""
     #考虑到常用姓氏有限，以单个字符串储存即可，可视为常数内置
     m_name_restore = ""
     #middle name应选取平声或仄声，考虑到与last name有高度重合，应使用共用数据源
-    l_name = 
+    l_name_restore = ""
+
+class Name(object):
+	"""用类型测试对名字的封装"""
+	def __init__(self, first_name, middle_name, last_name):
+		self.first_name = first_name
+		self.middle_name = middle_name
+		self.last_name = last_name
+
+	def nameRandom(self):
+		pass #对姓名随机化的方法
